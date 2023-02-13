@@ -23,7 +23,8 @@ const TransactionsComponent = ({ transactions }) => {
           />
           <button
             type='submit'
-            className='text-white absolute text-md right-2.5 bottom-4 focus:ring-4 focus:outline-none bg-slate-600  hover:bg-slate-900 font-bold text-lgs rounded-md px-2 py-1'
+            className='focus:outline-none absolute right-2.5 bottom-3 text-violet-600 border bg-white border-violet-600 hover:text-white hover:bg-violet-600 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-2 py-2'
+            // className='text-white absolute text-md right-2.5 bottom-4 focus:ring-4 focus:outline-none bg-slate-600  hover:bg-slate-900 font-bold text-lgs rounded-md px-2 py-1'
           >
             <BiSearch />
           </button>

@@ -11,13 +11,13 @@ const TransactionForm = ({ addTransaction }) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  const sumbitHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     addTransaction(formValues);
   };
 
   return (
-    <form onSubmit={sumbitHandler} className='w-full'>
+    <form onSubmit={submitHandler} className='w-full'>
       <input
         type='text'
         placeholder='Description'
@@ -62,7 +62,7 @@ const TransactionForm = ({ addTransaction }) => {
       <div className='flex items-center justify-center mb-8 mt-4'>
         <button
           type='submit'
-          className='bg-slate-600 text-white hover:bg-slate-900 font-bold text-lg rounded-md px-2 py-1'
+          className='focus:outline-none text-violet-600 border bg-white border-violet-600 hover:text-white hover:bg-violet-600 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5'
         >
           Add Transaction
         </button>
