@@ -3,8 +3,7 @@ import { BiSearch } from 'react-icons/bi';
 const TransactionsComponent = ({ transactions }) => {
   return (
     <div className='flex flex-col justify-start w-full'>
-      Transactions
-      <form>
+      <form className='my-4'>
         <label
           htmlFor='search'
           className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
@@ -30,6 +29,18 @@ const TransactionsComponent = ({ transactions }) => {
           </button>
         </div>
       </form>
+      {transactions.map((t) => (
+        <div
+          key={t.id}
+          className={
+            t.type === 'Expense'
+              ? 'text-red-500 text-lg pl-2 py-2 my-1 font-medium border border-gray-200 rounded-md '
+              : 'text-green-500 text-lg pl-2 py-2 my-1 font-medium border border-gray-200 rounded-md '
+          }
+        >
+          {t.desc}
+        </div>
+      ))}
     </div>
   );
 };

@@ -7,9 +7,21 @@ const ExpenseApp = () => {
   const [income, setIncome] = useState(0);
   const [transactions, setTransactions] = useState([]);
 
+  const addTransaction = (formValues) => {
+    console.log(formValues);
+    setTransactions([
+      ...transactions,
+      { ...formValues, id: crypto.randomUUID() },
+    ]);
+  };
+
   return (
     <section className='flex flex-col items-center w-[400px] bg-white rounded-xl px-4 pt-2 pb-8 mt-4 '>
-      <OverViewComponent income={income} expense={expense} />
+      <OverViewComponent
+        income={income}
+        expense={expense}
+        addTransaction={addTransaction}
+      />
       <TransactionsComponent transactions={transactions} />
     </section>
   );

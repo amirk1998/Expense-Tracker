@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import TransactionForm from './TransactionForm';
 
-const OverViewComponent = ({ income, expense }) => {
+const OverViewComponent = ({ income, expense, addTransaction }) => {
   const [isShow, setIsShow] = useState(false);
   return (
     <>
@@ -15,7 +15,7 @@ const OverViewComponent = ({ income, expense }) => {
         </button>
       </div>
 
-      {isShow && <TransactionForm />}
+      {isShow && <TransactionForm addTransaction={addTransaction} />}
 
       <div className='flex items-center justify-between w-full text-lg mb-8 select-none'>
         <div className='flex flex-col items-center justify-center border border-slate-400 rounded-lg px-8 py-4 w-1/2 mr-2'>
